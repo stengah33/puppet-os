@@ -56,11 +56,6 @@ class ubuntu {
       ensure => directory,
   }
 
-  #Jaunty: group scanner is not needed anymore cf. bug #195782 in LP
-  group {"scanner":
-    ensure => present,
-  }
-  
   # Profile
   file {"/etc/profile":
     ensure => present,
@@ -69,19 +64,6 @@ class ubuntu {
     mode   => 644,
     source => "puppet:///os/etc/profile-ubuntu",
   }
-
-  # Sources list 
-  apt::sources_list {"ubuntu.sources":
-    content => template("os/ubuntu.list.erb"),
-  }
-
-  apt::sources_list {"c2c.sources":
-    content => template("os/c2c.list.erb"),
-  }
-
-  apt::key {"5C662D02":
-    source  => "http://dev.camptocamp.com/packages/pub.key",
- }
 
   # Timezone
   file { "/etc/localtime":

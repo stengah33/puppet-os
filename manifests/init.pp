@@ -28,16 +28,8 @@ class os {
 
     ubuntu: {
       case $lsbdistcodename {
-        dapper,
-        edgy,
-        feisty,
-        gutsy,
-        hardy,
-        intrepid,
-        jaunty,
         lucid: {
           include "os::ubuntu-${lsbdistcodename}"
-          include apt::backports
         }
 
         default: {
