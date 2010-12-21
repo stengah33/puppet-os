@@ -1,20 +1,4 @@
 class os::debian-squeeze {
-  file { "/etc/apt/sources.list":
-    ensure => absent,
-    before => Exec["apt-get_update"],
-  }
-
-  apt::sources_list{"$lsbdistcodename":
-    content => "# File managed by puppet - ${name}
-deb http://mirror.switch.ch/ftp/mirror/debian/ ${lsbdistcodename} main contrib non-free
-deb http://mirror.switch.ch/ftp/mirror/debian-security/ ${lsbdistcodename}/updates main contrib non-free
-
-deb-src http://mirror.switch.ch/ftp/mirror/debian/ ${lsbdistcodename} main contrib non-free
-deb-src http://mirror.switch.ch/ftp/mirror/debian-security/ ${lsbdistcodename}/updates main contrib non-free
-",
-  }
-
-
   include locales::sources
   locales::locale {
     "de_DE.ISO-8859-1": charset => "ISO-8859-1";
