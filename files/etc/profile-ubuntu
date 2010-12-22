@@ -1,15 +1,6 @@
 # /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
 # and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
 
-if [ -d /etc/profile.d ]; then
-  for i in /etc/profile.d/*; do
-    if [ -r $i ]; then
-      . $i
-    fi
-  done
-  unset i
-fi
-
 if [ "$PS1" ]; then
   if [ "$BASH" ]; then
     PS1='\u@\h:\w\$ '
@@ -23,6 +14,15 @@ if [ "$PS1" ]; then
       PS1='$ '
     fi
   fi
+fi
+
+if [ -d /etc/profile.d ]; then
+  for i in /etc/profile.d/*; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
 fi
 
 umask 002
