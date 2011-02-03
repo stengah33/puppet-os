@@ -17,7 +17,6 @@ class ubuntu {
     "iptraf": ensure => present;
     "mtr-tiny": ensure => present;
     "ipcalc": ensure => present;
-    "ipython": ensure => present;
     "cvs": ensure => present;
     "smartmontools": ensure => present;
     "bzip2": ensure => present;
