@@ -22,14 +22,6 @@ class os::debian-squeeze {
     "it": locale => "it_IT.ISO-8859-1";
   }
 
-  # general config for emacs (without temporary files ~ )
-  file { "/etc/emacs/site-start.d/50c2c.el":
-    ensure  => present,
-    mode    => 644,
-    source  => "puppet:///os/etc/emacs/site-start.d/50c2c.el",
-    require => Package["emacs23-nox"]
-  }
-
   # Umask, etc.
   file { "/etc/profile":
     ensure => present,
@@ -56,7 +48,7 @@ LC_NUMERIC="fr_CH.UTF-8"
 
   file { "/etc/timezone":
     ensure  => present,
-    content => "Europe/Zurich",
+    content => "Europe/Zurich\n",
   }
 
   # Kernel
