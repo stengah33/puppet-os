@@ -12,18 +12,12 @@ class ubuntu {
     "pwgen": ensure => present;
     "vim": ensure => present;
     "curl": ensure => present;
-    "nmap": ensure => present;
-    "tshark": ensure => present;
-    "iptraf": ensure => present;
     "mtr-tiny": ensure => present;
-    "ipcalc": ensure => present;
     "cvs": ensure => present;
-    "smartmontools": ensure => present;
     "bzip2": ensure => present;
     "cadaver": ensure => present;
     "tofrodos": ensure => present;
     "lynx": ensure => present;
-    "lsof": ensure => present;
     "locales": ensure => present;
   }
   

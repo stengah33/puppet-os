@@ -3,42 +3,29 @@ class os::debian {
   # Default packages
   #
   package {
-    "lsof": ensure => present;
     "cron-apt": ensure => purged; # Keeps a fresh apt database
-    "tiobench": ensure => present; # Useful for doing IO benchmarks
-    "smartmontools": ensure => present; # SMART monitoring
     "at" : ensure => present; # usefull for reboots...
     "emacs23-nox" : ensure => present; # for fredj (this comes from backports on Lenny)
     "emacs21-common" : ensure => absent;
     "unzip": ensure => present;
     "zip": ensure => present;
-    "strace": ensure => present;
     "iproute": ensure => present;
     "mtr-tiny": ensure => present;
-    "tcpdump": ensure => present;
-    "tshark": ensure => present;
     "curl": ensure => present;
     "screen": ensure => present;
     "vim": ensure => present;
     "lynx": ensure => present;
     "bzip2": ensure => present;
     "patch": ensure => present;
-    "file": ensure => present;
     "less": ensure => present;
     "rsync": ensure => present;
     "rdiff-backup": ensure => present;
     "elinks": ensure => present;
-    "psmisc": ensure => present;
-    "nmap": ensure => present;
     "cadaver": ensure => present;
-    "iptraf": ensure => present;
     "tofrodos": ensure => present;
     "bc": ensure => present;
-    "whois": ensure => present;
-    "ipcalc": ensure => present;
     "cvs": ensure => present;
     "gettext": ensure => present;
-    "ngrep": ensure => present;
     "pwgen": ensure => present;
     "locate": ensure => absent;
     "xfsprogs": ensure => present;
