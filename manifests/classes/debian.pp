@@ -14,7 +14,6 @@ class os::debian {
     "elinks":         ensure => present;
     "emacs21-common": ensure => absent;
     "emacs23-nox":    ensure => present; # for fredj (this comes from backports on Lenny)
-    "file":           ensure => present;
     "gettext":        ensure => present;
     "iproute":        ensure => present;
     "less":           ensure => present;
@@ -29,7 +28,6 @@ class os::debian {
     "tofrodos":       ensure => present;
     "unzip":          ensure => present;
     "vim":            ensure => present;
-    "whois":          ensure => present;
     "xfsprogs":       ensure => present;
     "zip":            ensure => present;
   }
