@@ -1,6 +1,6 @@
 define os::kernel_module($ensure=present) {
     
-  line {"bootload module $name":
+  common::line {"bootload module $name":
     line   => "$name",
     file   => "/etc/modules",
     ensure => $ensure,

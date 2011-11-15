@@ -26,14 +26,14 @@ class ubuntu {
   }
 
   # Disable PC Speaker
-  line {"disable pc speaker":
+  common::line {"disable pc speaker":
     line   => 'blacklist pcspkr',
     file   => '/etc/modprobe.d/blacklist.conf',
     ensure => present,
   }
 
   # Do not propose system upgrade
-  line {
+  common::line {
     "default release-upgrade prompt configuration removed":
       line   => 'prompt=normal',
       file   => '/etc/update-manager/release-upgrades',

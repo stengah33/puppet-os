@@ -3,7 +3,7 @@ class os::debian-lenny {
   include os::debian
 
   # Disable PC Speaker
-  line {"disable pc speaker":
+  common::line {"disable pc speaker":
     line   => 'blacklist pcspkr',
     file   => '/etc/modprobe.d/blacklist',
     ensure => present,
