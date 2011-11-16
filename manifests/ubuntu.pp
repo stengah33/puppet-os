@@ -1,4 +1,4 @@
-class ubuntu {
+class os::ubuntu {
   # fix 7376
   package { ["openssl", "openssh-server", "openssh-client", "openssh-blacklist", "ssl-cert" ]:
     ensure => latest,

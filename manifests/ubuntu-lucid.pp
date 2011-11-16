@@ -1,2 +1,2 @@
-class os::ubuntu-lucid inherits ubuntu {
+class os::ubuntu-lucid inherits os::ubuntu {
 }
