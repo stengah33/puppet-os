@@ -55,7 +55,7 @@ class os::ubuntu {
     owner  => root,
     group  => root,
     mode   => 644,
-    source => "puppet:///os/etc/profile-ubuntu",
+    source => "puppet:///modules/os/etc/profile-ubuntu",
   }
 
   # Timezone

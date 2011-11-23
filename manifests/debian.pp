@@ -37,7 +37,7 @@ class os::debian {
   file { "/etc/profile":
     ensure => present,
     mode   => 644,
-    source => "puppet:///os/etc/profile-debian",
+    source => "puppet:///modules/os/etc/profile-debian",
   }
 
   file {"/etc/profile.d":
@@ -72,7 +72,7 @@ class os::debian {
   file { "/etc/environment":
     ensure => present,
     mode   => 644,
-    source => "puppet:///os/etc/environment",
+    source => "puppet:///modules/os/etc/environment",
     owner  => root,
     group  => root,
   }

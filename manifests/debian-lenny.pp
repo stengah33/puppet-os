@@ -13,7 +13,7 @@ class os::debian-lenny {
   file { "/etc/emacs/site-start.d/50c2c.el":
     ensure  => present,
     mode    => 644,
-    source  => "puppet:///os/etc/emacs/site-start.d/50c2c.el",
+    source  => "puppet:///modules/os/etc/emacs/site-start.d/50c2c.el",
     require => Package["emacs23-nox"]
   }
 
@@ -40,7 +40,7 @@ class os::debian-lenny {
 
   file {"/etc/locale.gen":
     ensure  => present,
-    source  => "puppet:///os/locale.gen",
+    source  => "puppet:///modules/os/locale.gen",
     notify => Exec["locale-gen"],
   }
 
@@ -54,7 +54,7 @@ class os::debian-lenny {
   # BUG: Smells hacky ?
   file {"/usr/share/locale/locale.alias":
     ensure => present,
-    source => "puppet:///os/locale.alias",
+    source => "puppet:///modules/os/locale.alias",
   }
 
   # SSL Configuration
