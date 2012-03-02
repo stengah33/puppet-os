@@ -4,7 +4,7 @@ class os::debian {
   #
   package {
     "at":             ensure => present; # usefull for reboots...
-    "atop":           ensure => present;
+    "atop":           ensure => absent;
     "bc":             ensure => present;
     "bash-completion":ensure => present;
     "bzip2":          ensure => present;
@@ -75,14 +75,6 @@ class os::debian {
     source => "puppet:///modules/os/etc/environment",
     owner  => root,
     group  => root,
-  }
-
-  # we like atop, but don't want it running everywhere.
-  service { "atop":
-    ensure    => stopped,
-    enable    => false,
-    hasstatus => false,
-    require => Package["atop"],
   }
 
   file {
