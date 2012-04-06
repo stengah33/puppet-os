@@ -3,10 +3,10 @@ class os::debian-lenny {
   include os::debian
 
   # Disable PC Speaker
-  common::line {"disable pc speaker":
-    line   => 'blacklist pcspkr',
-    file   => '/etc/modprobe.d/blacklist',
-    ensure => present,
+  augeas {'disable pc speaker':
+    context => '/files/etc/modprobe.d/blacklist',
+    changes => 'set blacklist[.="pcspkr"] "pcspkr"',
+    onlyif  => 'match blacklist[.="pcspkr"] size == 0',
   }
 
   # general config for emacs (without temporary files ~ )

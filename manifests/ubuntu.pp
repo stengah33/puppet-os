@@ -26,10 +26,10 @@ class os::ubuntu {
   }
 
   # Disable PC Speaker
-  common::line {"disable pc speaker":
-    line   => 'blacklist pcspkr',
-    file   => '/etc/modprobe.d/blacklist.conf',
-    ensure => present,
+  augeas {'disable pc speaker':
+    context => '/files/etc/modprobe.d/blacklist.conf',
+    changes => 'set blacklist[.="pcspkr"] "pcspkr"',
+    onlyif  => 'match blacklist[.="pcspkr"] size == 0',
   }
 
   # Do not propose system upgrade
