@@ -3,6 +3,9 @@ class os::debian-lenny {
   include os::debian
 
   # Disable PC Speaker
+  kmod::blacklist {'pcspkr':
+    file => '/etc/modprobe.d/blacklist',
+  }
   augeas {'disable pc speaker':
     context => '/files/etc/modprobe.d/blacklist',
     changes => 'set blacklist[.="pcspkr"] "pcspkr"',
