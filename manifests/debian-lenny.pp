@@ -6,11 +6,6 @@ class os::debian-lenny {
   kmod::blacklist {'pcspkr':
     file => '/etc/modprobe.d/blacklist',
   }
-  augeas {'disable pc speaker':
-    context => '/files/etc/modprobe.d/blacklist',
-    changes => 'set blacklist[.="pcspkr"] "pcspkr"',
-    onlyif  => 'match blacklist[.="pcspkr"] size == 0',
-  }
 
   # general config for emacs (without temporary files ~ )
   file { "/etc/emacs/site-start.d/50c2c.el":
