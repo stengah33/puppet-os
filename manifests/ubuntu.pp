@@ -26,7 +26,7 @@ class os::ubuntu {
   }
 
   # Disable PC Speaker
-  kmod::blacklist {'pcspkr:' }
+  kmod::blacklist {'pcspkr': }
 
   # Do not propose system upgrade
   common::line {
