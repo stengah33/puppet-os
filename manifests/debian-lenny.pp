@@ -71,11 +71,6 @@ class os::debian-lenny {
     refreshonly => true,
   }
 
-  # fix 14573
-  package {"debian-archive-keyring":
-    ensure => latest,
-  }
-
   # fixes rt#14979
   cron {"Keeps a fresh apt database":
     command  => "/usr/bin/apt-get update -q=2",
