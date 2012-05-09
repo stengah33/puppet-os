@@ -1,5 +1,7 @@
 deb http://archive.debian.org/debian/ lenny main contrib non-free
-deb http://archive.debian.org/debian-security/ lenny/updates main contrib non-free
+# Release files for security updates are expired
+# and Max-ValidTime doesn't work before apt 0.8.15 (Debian #640122)
+#deb http://archive.debian.org/debian-security/ lenny/updates main contrib non-free
 
 deb-src http://archive.debian.org/debian/ lenny main contrib non-free
-deb-src http://archive.debian.org/debian-security/ lenny/updates main contrib non-free
+#deb-src http://archive.debian.org/debian-security/ lenny/updates main contrib non-free
