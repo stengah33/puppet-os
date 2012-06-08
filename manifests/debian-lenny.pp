@@ -3,8 +3,11 @@ class os::debian-lenny {
   include os::debian
 
   # Disable PC Speaker
-  kmod::blacklist {'pcspkr':
-    file => '/etc/modprobe.d/blacklist',
+  kmod::blacklist {'pcspkr': }
+
+  # Get rid of the old file
+  file {'/etc/modprobe.d/blacklist':
+    ensure => absent,
   }
 
   # general config for emacs (without temporary files ~ )
