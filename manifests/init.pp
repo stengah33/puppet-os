@@ -1,13 +1,5 @@
 class os {
 
-  include concat::setup
-
-  concat {'/etc/apt/preferences':
-    owner => 'root',
-    group => 'root',
-    mode  => '0644',
-  }
-
   file { "/tmp":
     ensure => directory,
     mode   => 1777,
