@@ -22,18 +22,18 @@ define os::backported_package( $ensure, $responsefile="", $install=true) {
   }
   case $ensure {
     'present','latest','installed': {
-      common::concatfilepart {$name:
+      concat::fragment {$name:
         ensure  => present,
         content => "Package: ${name}\nPin: release a=${lsbdistcodename}-backports\nPin-Priority: 999\n\n",
-        file    => "/etc/apt/preferences",
+        target  => "/etc/apt/preferences",
         before  => Package[$name],
       }
     }
     'absent','purged': {
-      common::concatfilepart {$name:
+      concat::fragment {$name:
         ensure  => absent,
         content => "Package: ${name}\nPin: release a=${lsbdistcodename}-backports\nPin-Priority: 999\n\n",
-        file    => "/etc/apt/preferences",
+        target  => "/etc/apt/preferences",
         before  => Package[$name],
       }
     }
