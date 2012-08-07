@@ -10,7 +10,10 @@ class os {
   case $operatingsystem {
     debian: {
       case $lsbdistcodename {
-        squeeze: { 
+        wheezy: {
+          include os::debian-wheezy
+        }
+        squeeze: {
           include os::debian-squeeze
         }
         lenny: {
