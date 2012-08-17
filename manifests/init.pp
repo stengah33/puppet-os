@@ -41,6 +41,11 @@ class os {
     CentOS: {
       include os::centos
     }
+
+    OpenSUSE: {
+      include os::opensuse
+    }
+
     default: {
       fail "Unsupported OS ${operatingsystem} in 'os' module"
     }
